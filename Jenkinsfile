@@ -17,7 +17,7 @@ pipeline{
         
         stage('Checkout from Git'){
             steps{
-                git branch: 'main', url: 'https://github.com/Ashfaque-9x/a-swiggy-clone.git'
+                git branch: 'main', url: 'https://github.com/Velocity9919/a-swiggy-clone.git'
             }
         }
         
@@ -55,8 +55,8 @@ pipeline{
                 script{
                     withDockerRegistry(credentialsId: 'dockerhub', toolName: 'docker'){   
                         sh "docker build -t swiggy-clone ."
-                        sh "docker tag swiggy-clone ashfaque9x/swiggy-clone:latest "
-                        sh "docker push ashfaque9x/swiggy-clone:latest "
+                        sh "docker tag swiggy-clone nareshbabu1991/swiggy-clone:latest "
+                        sh "docker push nareshbabu1991/swiggy-clone:latest "
                     }
                 }
             }
